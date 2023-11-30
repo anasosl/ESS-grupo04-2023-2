@@ -31,3 +31,13 @@ Feature: Gerenciamento de posts
         And a página possui o post "O Senhor dos Anéis"
         When eu seleciono a opção "Excluir" do post "O Senhor dos Anéis"
         Then eu não vejo o post "O Senhor dos Anéis" na página de posts do usuário "@lgmmn"
+
+    Scenario: Criar novo post do mesmo conteúdo de um post já existente
+        Given eu estou na página de posts do usuário "@lgmmn"
+        And eu estou logado como o usuário "@lgmmn"
+        And a página possui o post "O Senhor dos Anéis"
+        When eu seleciono a opção "Novo Post"
+        And eu preencho o campo "Conteúdo" com "O filme é muito bom!"
+        And eu seleciono a opção "4 estrelas" no campo "Avaliação"
+        And eu seleciono a opção "Publicar"
+        Then eu vejo a mensagem "Já existe um post desse conteúdo para esse usuário!"
