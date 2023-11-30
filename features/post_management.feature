@@ -13,7 +13,7 @@ Feature: Gerenciamento de posts
         And eu seleciono a opção "4 estrelas" no campo "Avaliação"
         And eu seleciono a opção "Publicar"
         Then eu vejo o post "Filme muito bom" na página do conteúdo “O Senhor dos Anéis”
-	    And eu vejo o post “Filme muito bom” na página de posts do usuário "@lgmmn"
+	    And eu vejo o post "Filme muito bom" na página de posts do usuário "@lgmmn"
         And eu vejo a mensagem "Post criado com sucesso!"
 
     Scenario: Editar conteúdo de um post do usuário
