@@ -31,3 +31,4 @@ Feature: Gerenciamento de posts
         And a página possui o post "O Senhor dos Anéis"
         When eu seleciono a opção "Excluir" do post "O Senhor dos Anéis"
         Then eu não vejo o post "O Senhor dos Anéis" na página de posts do usuário "@lgmmn"
+        And eu não vejo o post "O Senhor dos Anéis" na página do conteúdo "O Senhor dos Anéis"
