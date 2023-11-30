@@ -24,3 +24,10 @@ Feature: Gerenciamento de posts
         And eu seleciono a opção "Editar"
         Then eu vejo "O filme é muito bom! Recomendo!" no campo "Conteúdo" na página do post "O Senhor dos Anéis" de "@lgmmn"
         And eu vejo a mensagem "Post editado com sucesso!"
+
+    Scenario: Excluir um post do usuário
+        Given eu estou na página de posts do usuário "@lgmmn"
+        And eu estou logado como o usuário "@lgmmn"
+        And a página possui o post "O Senhor dos Anéis"
+        When eu seleciono a opção "Excluir" do post "O Senhor dos Anéis"
+        Then eu não vejo o post "O Senhor dos Anéis" na página de posts do usuário "@lgmmn"
