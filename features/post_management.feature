@@ -14,3 +14,13 @@ Feature: Gerenciamento de posts
         And eu seleciono a opção "Publicar"
         Then eu vejo o post "Filme muito bom" na página do conteúdo “O Senhor dos Anéis”
 	    And eu vejo o post “Filme muito bom” na página de posts do usuário “@lgmmn”
+
+    Scenario: Editar conteúdo de um post do usuário
+        Given eu estou na página de posts do usuário "@lgmmn"
+        And eu estou logado como o usuário "@lgmmn"
+        And a página possui o post "O Senhor dos Anéis" que possui o conteúdo "O filme é muito bom!"
+        When eu seleciono a opção "Editar conteúdo" do post "O Senhor dos Anéis"
+        And eu preencho o campo "Conteúdo" com "O filme é muito bom! Recomendo!"
+        And eu seleciono a opção "Editar"
+        Then eu vejo "O filme é muito bom! Recomendo!" no campo "Conteúdo" na página do post "O Senhor dos Anéis" de "@lgmmn"
+        And eu vejo a mensagem "Post editado com sucesso!"
