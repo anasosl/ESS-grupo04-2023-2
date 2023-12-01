@@ -17,3 +17,11 @@ Scenario: Remoção de Usuário
     And clico no botão “Confirmar”
     Then eu sou redirecionado para página inicial do sistema
     And meu perfil estará removido
+
+Scenario: Edição de senha de Usuário
+
+    Given estou na tela de “Edição do perfil”
+    When eu preencho os campos “Nova senha” e “Confirme sua nova senha”
+    And eu clico no botão “Confirmar”
+    Then eu sou redirecionado para a página do meu perfil
+    And a minha senha estará alterada
