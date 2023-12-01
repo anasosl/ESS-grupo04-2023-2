@@ -9,3 +9,11 @@ Scenario: Edição de nome do perfil
     And eu clico no botão “Confirmar”
     Then eu sou redirecionado para a página do meu perfil
     And o meu nome estará alterado
+
+Scenario: Remoção de Usuário
+
+    Given estou na tela “Remover perfil”
+    When eu preencho o campo de segurança
+    And clico no botão “Confirmar”
+    Then eu sou redirecionado para página inicial do sistema
+    And meu perfil estará removido
