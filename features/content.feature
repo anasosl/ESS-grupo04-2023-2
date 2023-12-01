@@ -47,8 +47,8 @@ Scenario: cadastrar livro sem título
 
 Scenario: mostrar conteúdo
     Given eu estou na página “conteúdos”
-    And eu vejo “Laranja Mecânica” como título da obra
-    When eu seleciono “Laranja Mecânica”
+    And eu vejo “Scarface” como título da obra
+    When eu seleciono “Scarface”
     Then eu estou na página “visualização de conteúdo”
-    And eu vejo “Laranja Mecânica” como título da obra
+    And eu vejo “Scarface” como título da obra
     Then eu vejo a mensagem “Obra sem título não pode ser cadastrada”
