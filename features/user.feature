@@ -26,3 +26,19 @@ Scenario: Edição de senha de Usuário
     Then eu sou redirecionado para a página do meu perfil
     And a minha senha estará alterada
     And uma mensagem "Senha alterada com sucesso!" aparece
+    
+Scenario: Troca de senha inválida
+
+    Given o usuário está na janela "Troca de senha"
+    And a senha atual é "ka01!cna0"
+    When preenche "qwerty" no espaço "Digite sua senha atual"
+    And preenche "qwertyy" no espaço "Digite sua nova senha"
+    And seleciona o botão "Confirmar"
+    Then o pop-up "Algo aconteceu :/ Tente novamente" aparece 
+
+Scenario: Troca de nome com caracteres inválidos
+
+    Given o usuário está na janela "Troca de nome"
+    When preenche "(┬┬﹏┬┬)" no espaço "Digite seu novo nome"
+    And seleciona o botão "Confirmar"
+    Then o pop-up "Algo aconteceu :/ Tente novamente" aparece
