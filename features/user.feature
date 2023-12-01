@@ -25,3 +25,4 @@ Scenario: Edição de senha de Usuário
     And eu clico no botão “Confirmar”
     Then eu sou redirecionado para a página do meu perfil
     And a minha senha estará alterada
+    And uma mensagem "Senha alterada com sucesso!" aparece
