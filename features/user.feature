@@ -34,3 +34,10 @@ Scenario: Troca de senha inválida
     And preenche "qwertyy" no espaço "Digite sua nova senha"
     And seleciona o botão "Confirmar"
     Then o pop-up "Algo aconteceu :/ Tente novamente" aparece 
+
+Scenario: Troca de nome com caracteres inválidos
+
+    Given o usuário está na janela "Troca de nome"
+    When preenche "(┬┬﹏┬┬)" no espaço "Digite seu novo nome"
+    And seleciona o botão "Confirmar"
+    Then o pop-up "Algo aconteceu :/ Tente novamente" aparece
