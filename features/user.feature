@@ -25,3 +25,12 @@ Scenario: Edição de senha de Usuário
     And eu clico no botão “Confirmar”
     Then eu sou redirecionado para a página do meu perfil
     And a minha senha estará alterada
+
+Scenario: Troca de senha inválida
+
+    Given o usuário está na janela "Troca de senha"
+    And a senha atual é "ka01!cna0"
+    When preenche "qwerty" no espaço "Digite sua senha atual"
+    And preenche "qwertyy" no espaço "Digite sua nova senha"
+    And seleciona o botão "Confirmar"
+    Then o pop-up "Algo aconteceu :/ Tente novamente" aparece 
