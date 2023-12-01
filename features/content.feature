@@ -36,3 +36,10 @@ Scenario: cadastrar livro sem título
     when eu salvo o cadastro
     Then eu vejo a mensagem “Obra sem título não pode ser cadastrada”
     And continuo na página "cadastro de conteúdo"
+
+Scenario: mostrar conteúdo
+    Given eu estou na página “conteúdos”
+    And eu vejo “Laranja Mecânica” como título da obra
+    when eu seleciono “Laranja Mecânica”
+    Then eu estou na página “visualização de conteúdo”
+    And eu vejo “Laranja Mecânica” como título da obra
