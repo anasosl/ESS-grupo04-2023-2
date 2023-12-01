@@ -11,15 +11,22 @@ Scenario: cadastrar filme novo
     And eu vejo “Francis Ford Coppola” como diretor da obra
 
 Scenario: editar conteúdo cadastrado
+        Given eu estou na página “conteúdos”
+        And eu vejo “Batman O Cavaleiro das Trevas” como título da obra
+        And eu vejo “Alan Moore” como autor da obra
+        when eu seleciono “edição”
+        And eu atualizo o campo “autor” para “Frank Miller” 
+        And salvo a edição
+        Then eu vejo a mensagem “Edição realizada com sucesso”
+        And eu vejo “Batman O Cavaleiro das Trevas” como título da obra
+        And eu vejo “Frank Miller” como autor da obra
+
+Scenario: deletar conteúdo cadastrado
     Given eu estou na página “conteúdos”
     And eu vejo “Batman O Cavaleiro das Trevas” como título da obra
-    And eu vejo “Alan Moore” como autor da obra
-    when eu seleciono “edição”
-    And eu atualizo o campo “autor” para “Frank Miller” 
-    And salvo a edição
-    Then eu vejo a mensagem “Edição realizada com sucesso”
-    And eu vejo “Batman O Cavaleiro das Trevas” como título da obra
-    And eu vejo “Frank Miller” como autor da obra
+    when eu deleto “Batman O Cavaleiro das Trevas”
+    Then eu vejo a mensagem “Batman O Cavaleiro das Trevas foi deletado com sucesso”
+    And não vejo mais “Batman O Cavaleiro das Trevas” na página “conteúdos”
 
 Scenario: cadastrar filme repetido
     Given eu estou na página “cadastro de conteúdo”
@@ -34,6 +41,7 @@ Scenario: cadastrar livro sem título
     And eu não preencho o campo “título”
     And eu preencho “autor” com “JRR Tolkien”
     when eu salvo o cadastro
+
     Then eu vejo a mensagem “Obra sem título não pode ser cadastrada”
     And continuo na página "cadastro de conteúdo"
 
@@ -43,3 +51,4 @@ Scenario: mostrar conteúdo
     when eu seleciono “Laranja Mecânica”
     Then eu estou na página “visualização de conteúdo”
     And eu vejo “Laranja Mecânica” como título da obra
+    Then eu vejo a mensagem “Obra sem título não pode ser cadastrada”
