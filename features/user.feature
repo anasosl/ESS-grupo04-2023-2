@@ -36,7 +36,7 @@ Scenario: Troca de senha inválida
     And seleciona o botão "Confirmar"
     Then o pop-up "Algo aconteceu. Tente novamente!" aparece 
 
-Scenario: Troca de nome com caracteres inválidos
+Scenario: Troca de nome com caracteres inapropriados
 
     Given o usuário está na janela "Troca de nome"
     When preenche "(┬┬﹏┬┬)" no espaço "Digite seu novo nome"
