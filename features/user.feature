@@ -42,3 +42,12 @@ Scenario: Troca de nome com caracteres inapropriados
     When preenche "(┬┬﹏┬┬)" no espaço "Digite seu novo nome"
     And seleciona o botão "Confirmar"
     Then o pop-up "Algo aconteceu. Tente novamente!" aparece
+
+Scenario: Criação de usuário
+
+    Given estou na tela “Criação de novo usuário”
+    When eu preencho o campo "Nome de Usuário" com "Guilherme"
+    And eu preencho a o campo "Senha" com "abc123"
+    And eu clico no botão “Confirmar”
+    Then eu sou redirecionado para a página inicial
+    And eu sou capaz de fazer login com meu novo usuário
