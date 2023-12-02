@@ -59,3 +59,12 @@ Scenario: cadastrar livro sem título
     And eu preencho “autor” com “JRR Tolkien”
     when eu salvo o cadastro
     Then eu vejo a mensagem “Obra sem título não pode ser cadastrada”
+
+Scenario: cadastrar filme sem ano
+    Given eu estou na página “cadastro de conteúdo”
+    And eu não preencho o campo “ano”
+    And eu preencho o campo “título” com "De volta para o Futuro"
+    And eu preencho “diretor” com “Robert Zemekis”
+    when eu salvo o cadastro
+    Then eu vejo a mensagem “Obra sem ano de produção não pode ser cadastrada”
+    And continuo na página "cadastro de conteúdo"
