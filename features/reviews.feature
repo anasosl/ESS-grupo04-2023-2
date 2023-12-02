@@ -1,4 +1,4 @@
-Cenário 1 - Criação de Review
+Cenário 1 - Criação de Reviews
 Given Eu estou logado com o usuário “Pedro”
 And Eu estou na aba do filme “O Poderoso Chefão”
 When Eu aperto em “Escrever review”
