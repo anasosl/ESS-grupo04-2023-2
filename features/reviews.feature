@@ -25,3 +25,4 @@ Then Surge uma janela de preenchimento de review
 When Eu preencho a aba de texto
 And Eu clico em “Confirmar”
 Then Aparece uma mensagem “Falha ao adicionar review”
+And O review não é adicionado
