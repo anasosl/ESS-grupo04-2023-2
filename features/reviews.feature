@@ -25,3 +25,11 @@ Then Surge uma janela de preenchimento de review
 When Eu preencho a aba de texto
 And Eu clico em “Confirmar”
 Then Aparece uma mensagem “Falha ao adicionar review”
+
+Cenário 4 - Remoção de Review
+Given Eu estou logado com o usuário “Pedro”
+And Eu estou na aba do filme “O Poderoso Chefão”
+And Eu vejo o meu review realizado
+When Eu clico no review realizado
+And Eu clico em “Apagar”
+Then O review do usuário “Pedro” de “O Poderoso Chefão” é apagado
