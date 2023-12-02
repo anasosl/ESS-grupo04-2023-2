@@ -33,3 +33,15 @@ And Eu vejo o meu review realizado
 When Eu clico no review realizado
 And Eu clico em “Apagar”
 Then O review do usuário “Pedro” de “O Poderoso Chefão” é apagado
+
+Cenário 5 - Edição do Review
+Given Eu estou logado com o usuário “Pedro”
+And Eu estou na aba do filme “O Poderoso Chefão”
+And Eu vejo o meu review realizado
+When Eu clico no review realizado
+And Eu clico em “Editar"
+Then Surge uma janela de edição
+When Eu altero o campo de texto do review
+And Eu altero a nota de 3.5 para 4.5
+And Eu clico em "Salvar"
+Then O review para "O Poderoso Chefão" é atualizado
