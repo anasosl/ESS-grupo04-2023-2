@@ -43,6 +43,6 @@ When Eu clico no review realizado
 And Eu clico em “Editar"
 Then Surge uma janela de edição
 When Eu altero o campo de texto do review
-And Eu altero a nota de 3.5 para 4.5
+And Eu altero a nota de 3.5 para 4
 And Eu clico em "Salvar"
 Then O review para "O Poderoso Chefão" é atualizado
